@@ -1,0 +1,20 @@
+<div class="container mt-4">
+  <h1 class="mb-4">All Expenses</h1>
+
+  <div *ngIf="expenses().length === 0" class="alert alert-info">
+    No expenses found. <a href="/add">Add an expense</a> to get started.
+  </div>
+
+  <div *ngIf="expenses().length > 0">
+    <div class="row">
+      <div class="col-md-8">
+        @for (expense of expenses(); track expense.id) {
+        <app-expense-item
+          [expense]="expense"
+          (deleteExpense)="onDeleteExpense($event)"
+        ></app-expense-item>
+        }
+      </div>
+    </div>
+  </div>
+</div>
