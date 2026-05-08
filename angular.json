@@ -27,6 +27,7 @@
             ],
             "styles": ["src/styles.css"],
             "server": "src/main.server.ts",
+            "outputPath": "docs/browser",
             "outputMode": "server",
             "security": {
               "allowedHosts": []
